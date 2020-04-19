@@ -1,7 +1,6 @@
 import turtle
 
 # Tess becomes a traffic light.
-turtle.setup(400,500)
 
 wn = turtle.Screen()
 
@@ -42,25 +41,23 @@ tess.fillcolor("green")
 
 # This variable holds the current state of the machine
 state_num = 0
+state_map = ['green','orange','red']
+
+def set_state(new_state_num):
+    global state_num, state_map
+    state_diff = new_state_num - state_num
+    advance = state_diff * 70
+
+    state_num = new_state_num
+
+    tess.fillcolor(state_map[state_num])
+    tess.forward(advance)
 
 def advance_state_machine():
-    global state_num
-    if state_num == 0:
-        # Transition from state 0 to state 1
-        tess.forward(70)
-        tess.fillcolor("orange")
-    elif state_num == 1:
-        # Transition from state 1 to state 2
-        tess.forward(70)
-        tess.fillcolor("red")
-    else:
-        # Transition from state 2 to state 0
-        tess.back(140)
-        tess.fillcolor("green")
+    set_state((state_num + 1)%3)
+    turtle.ontimer(advance_state_machine, 500)
 
-    state_num = (state_num + 1)%3
-
-wn.onkey(advance_state_machine, "space")
+turtle.ontimer(advance_state_machine,500)
 
 wn.listen()
 wn.mainloop()
