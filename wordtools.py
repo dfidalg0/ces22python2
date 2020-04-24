@@ -95,5 +95,7 @@ def _tests ():
     assert longestword(["this","supercalifragilisticexpialidocious"]) == 34
     assert longestword([ ]) == 0
 
+    print('All tests passed')
+
 if __name__ == '__main__':
     _tests()
