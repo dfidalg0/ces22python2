@@ -11,4 +11,4 @@
 * **9**       : polygons.py
 * **10**      : decorators.py
 * **11**      : func_args.py
-* **12**      : duck.py
+* **12**      : duck.py, point.py
