@@ -25,3 +25,28 @@ class Point:
         b = y0 - m*x0
 
         return (m,b)
+
+    # Exercício 12
+    def __add__ (self,other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __mul__ (self, other): # Complex multiplication
+        return Point(
+            self.x * other.x - self.y * other.y,
+            self.x * other.y + self.y * other.x
+        )
+
+    def __rmul__(self, other):
+        return Point(
+            self.x * other.real - self.y * other.imag,
+            self.x * other.imag + self.y * other.real
+        )
+
+    def __radd__ (self, other):
+        return Point(other.real + self.x , self.y + other.imag)
+
+    def __str__ (self):
+        return f'({self.x},{self.y})'
+
+    def __repr__(self):
+        return self.__str__()
