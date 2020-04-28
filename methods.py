@@ -12,6 +12,8 @@ class Register (ABC):
 
     # Class methods
     def __init__ (self, name, age):
+        assert type(name) == str
+        assert type(age) == int
         self.__name = name
         self.__age = age
         Register.__number += 1
@@ -43,6 +45,7 @@ class Dev (Register):
     __paycheck = [5000, 10000, 15000]
 
     def __init__ (self, name, age, experience):
+        assert experience in {Dev.junior, Dev.middle, Dev.senior}
         super().__init__(name,age)
         self.__expr = experience
 
