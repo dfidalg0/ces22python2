@@ -24,4 +24,4 @@ print()
 
 # Exercício 11
 timer1 = time_func ('Testing', 'args', 'list\n', end = 'Testing args dict\n')
-time(print)
+timer1(print)
