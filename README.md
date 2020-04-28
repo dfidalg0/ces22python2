@@ -9,6 +9,5 @@
 * **5, 6, 7** : point.py
 * **8**       : methods.py
 * **9**       : polygons.py
-* **10**      : decorators.py
-* **11**      : func_args.py
+* **10, 11**     : decorators.py
 * **12**      : duck.py, point.py
